@@ -1,0 +1,115 @@
+/* Fondo general */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(ellipse at top, #0f0f0f, #1a1a1a);
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Contenedor principal */
+.sobre-mi-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Sección principal */
+.profile-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Imagen con animación */
+.profile-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #50E3C2;
+  box-shadow: 0 0 30px rgba(80, 227, 194, 0.4);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Contenido */
+.profile-content {
+  max-width: 600px;
+  animation: slideUp 1s ease;
+}
+
+.name {
+  font-size: 2.8rem;
+  color: #4A90E2;
+  margin-bottom: 1rem;
+  animation: glow 2s infinite alternate;
+}
+
+.description,
+.extra {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  color: #ccc;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #50E3C2, 0 0 20px #50E3C2;
+  }
+  to {
+    text-shadow: 0 0 20px #4A90E2, 0 0 40px #4A90E2;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 2.2rem;
+  }
+
+  .profile-image img {
+    width: 200px;
+    height: 200px;
+  }
+}

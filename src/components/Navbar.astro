@@ -1,0 +1,45 @@
+---
+const currentPath = Astro.url.pathname; // para resaltar el link activo (opcional)
+---
+
+<nav class="navbar">
+  <div class="logo text-xl font-bold text-blue-600">Portafolio</div>
+  <ul class="flex space-x-6">
+    <li>
+      <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Inicio</a>
+    </li>
+    <li>
+      <a href="/sobremi" class={`nav-link ${currentPath === '/sobremi' ? 'active' : ''}`}>Sobre mí</a>
+    </li>
+    <li>
+      <a href="/proyectos" class={`nav-link ${currentPath === '/proyectos' ? 'active' : ''}`}>Proyectos</a>
+    </li>
+    <li>
+      <a href="/contacto" class={`nav-link ${currentPath === '/contacto' ? 'active' : ''}`}>Contacto</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+</style>

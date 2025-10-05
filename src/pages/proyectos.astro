@@ -1,0 +1,89 @@
+---
+import "../styles/proyectos.css";
+
+import alvimaxImg from "../assets/alvimax.png";
+import drazzyFoppImg from "../assets/drazzy fopp.png";
+import imposibleDashImg from "../assets/imposible dash.png";
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
+  <!-- Aquí va el contenido específico de la página -->
+</BaseLayout>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mis Proyectos</title>
+  </head>
+  <body>
+    <main class="proyectos-container">
+      <section class="header-section">
+        <h1 class="title">🚀 Mis Proyectos</h1>
+        <p class="subtitle">Una colección de ideas convertidas en realidad.</p>
+      </section>
+
+      <section class="cards-grid">
+        <div class="project-card">
+          <img src={alvimaxImg.src} alt="Proyecto Alvimax" class="project-image" />
+          <h2>🌐 Alvimax</h2>
+          <p>Landing page moderna y responsiva creada con Astro y Tailwind.</p>
+          <button class="view-btn" data-img={alvimaxImg.src} data-title="Proyecto Alvimax">Ver Proyecto</button>
+        </div>
+
+        <div class="project-card">
+          <img src={drazzyFoppImg.src} alt="Proyecto Drazzy Fopp" class="project-image" />
+          <h2>📱 Drazzy Fopp</h2>
+          <p>Aplicación móvil para gestión de tareas con diseño minimalista.</p>
+          <button class="view-btn" data-img={drazzyFoppImg.src} data-title="Proyecto Drazzy Fopp">Ver Proyecto</button>
+        </div>
+
+        <div class="project-card">
+          <img src={imposibleDashImg.src} alt="Proyecto Imposible Dash" class="project-image" />
+          <h2>🎮 Imposible Dash</h2>
+          <p>Juego arcade desarrollado con Phaser y JavaScript.</p>
+          <button class="view-btn" data-img={imposibleDashImg.src} data-title="Proyecto Imposible Dash">Ver Proyecto</button>
+        </div>
+      </section>
+
+      <!-- Modal -->
+      <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <button id="closeModal" aria-label="Cerrar modal" class="modal-close">&times;</button>
+        <img id="modalImg" src="" alt="" class="modal-image" />
+        <h3 id="modal-title" class="modal-title"></h3>
+      </div>
+    </main>
+
+    <script is:inline>
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modal-title');
+      const closeModalBtn = document.getElementById('closeModal');
+      const buttons = document.querySelectorAll('.view-btn');
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const imgSrc = btn.getAttribute('data-img');
+          const title = btn.getAttribute('data-title');
+          modalImg.src = imgSrc;
+          modalImg.alt = title;
+          modalTitle.textContent = title;
+          modal.classList.remove('hidden');
+          modal.focus();
+        });
+      });
+
+      closeModalBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        modalImg.src = '';
+        modalTitle.textContent = '';
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+          modalImg.src = '';
+          modalTitle.textContent = '';
+        }
+      });
+    </script>
+  </body>
+</html>

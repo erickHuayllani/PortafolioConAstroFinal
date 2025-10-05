@@ -1,0 +1,94 @@
+/* General body styles */
+body {
+  background-color: #1e1e2f; /* Fondo oscuro para hacer destacar los colores */
+  color: #f5f5f5; /* Color de texto blanco suave */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 🌐 Navbar */
+nav {
+  background-color: rgba(30, 30, 47, 0.85); /* Fondo oscuro y translúcido */
+  box-shadow: 0 4px 10px rgba(255, 0, 255, 0.3); /* Sombra neón más destacada */
+}
+
+nav a {
+  color: #e0bfff; /* Color de los enlaces en tono morado claro */
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff66cc; /* Resaltar con un morado neón */
+}
+
+/* 🌟 Título principal */
+h1, #sobre-mi h1, #sobre-mi p {
+  text-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc, 0 0 30px #8000ff; /* Efecto de neón en el texto */
+  color: #e0bfff;
+}
+
+h2, p {
+  color: #d1c4e9; /* Color suave para subtítulos y párrafos */
+}
+
+/* 🎬 Sección sobre mí */
+#sobre-mi {
+  position: relative;
+  z-index: 10;
+}
+
+#sobre-mi .text-white {
+  color: #e0bfff; /* Color blanco suave con matices morados */
+}
+
+/* 🚀 Sección de habilidades */
+.bg-gradient-to-b {
+  background: linear-gradient(to bottom, rgba(110, 0, 255, 0.6), rgba(80, 0, 150, 0.6)); /* Gradiente morado más suave */
+}
+
+h2 {
+  color: #b39ddb; /* Color morado claro para los encabezados */
+  text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff; /* Efecto de neón en los títulos */
+}
+
+.grid div {
+  background-color: #2a2a3a;
+  border: 2px solid #8000ff; /* Bordes morados para los elementos */
+  color: #e0bfff;
+  box-shadow: 0 4px 10px rgba(255, 0, 255, 0.2); /* Sombra morada menos intensa */
+}
+
+.grid div:hover {
+  background-color: #4a4a68; /* Color más oscuro para el hover */
+  border-color: #ff66cc; /* Resaltado morado neón al pasar el mouse */
+}
+
+/* 📬 Sección contacto */
+#contacto {
+  background-color: #8000ff; /* Fondo morado fuerte */
+  color: #f5f5f5;
+}
+
+#contacto h2 {
+  text-shadow: 0 0 8px #ff00ff, 0 0 20px #ff66cc; /* Efecto de neón en el título */
+}
+
+#contacto p {
+  color: #f3e5f5; /* Color suave morado para el texto */
+}
+
+/* Botones */
+button {
+  background-color: #ff66cc; /* Botón en neón rosa */
+  color: #fff;
+  border: 2px solid #8000ff; /* Borde morado */
+  box-shadow: 0 0 10px #ff66cc; /* Sombra morada para el botón */
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #8000ff; /* Fondo morado al pasar el mouse */
+  border-color: #ff66cc; /* Resaltado en neón al hover */
+  box-shadow: 0 0 20px #ff00ff; /* Efecto brillante de neón */
+}
+
+/* Eliminación de !important innecesarios */

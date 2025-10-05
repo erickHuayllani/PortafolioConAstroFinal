@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";  // Verifica que el archivo Layout.astro esté en la ruta correcta
+import Navbar from "../components/Navbar.astro";  // Verifica que el archivo Navbar.astro esté en la ruta correcta
+import Hero from "../components/Hero.astro";  // Verifica que el archivo Hero.astro esté en la ruta correcta
+import Projects from "../components/Projects.astro";  // Verifica que el archivo Projects.astro esté en la ruta correcta
+import Contact from "../components/Contact.astro";  // Verifica que el archivo Contact.astro esté en la ruta correcta
+import fondoVideo from '../assets/fondoI.mp4';  // Verifica que el archivo de video esté en la ruta correcta
+import "aos/dist/aos.css";  // Asegúrate de haber instalado AOS correctamente
+import "../styles/index.css";  // Asegúrate de que index.css esté en la carpeta "styles"
+---
+
+<Layout title="Portafolio - Erick Huayllani">
+  <!-- 🌐 Navbar -->
+  <Navbar />
+
+  <!-- 🎬 Sección Sobre mí con video de fondo -->
+  <section id="sobre-mi" data-aos="fade-up" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+    <!-- Video de fondo -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover brightness-50 z-0">
+      <source src={fondoVideo} type="video/mp4" />
+      Tu navegador no soporta video de fondo.
+    </video>
+
+    <!-- Capa oscura opcional -->
+    <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+    <!-- Contenido encima del video -->
+    <div class="relative z-20 text-white px-4 max-w-3xl">
+      <h1 class="text-5xl font-extrabold mb-4 tracking-wide drop-shadow-lg">Hola, soy Erick Huayllani 👋</h1>
+      <p class="text-xl font-light leading-relaxed drop-shadow-md">
+        Desarrollador web apasionado por crear <span class="font-semibold text-blue-300">interfaces modernas</span>, limpias y eficientes.
+      </p>
+    </div>
+  </section>
+
+  <!-- 🚀 Sección de habilidades -->
+  <section data-aos="fade-right" class="py-24 bg-gradient-to-b from-white to-blue-50 text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-10">🚀 Habilidades destacadas</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-blue-200" data-aos="zoom-in">
+        <p class="text-blue-600 font-semibold text-lg">HTML</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-blue-200" data-aos="zoom-in" data-aos-delay="100">
+        <p class="text-blue-600 font-semibold text-lg">CSS / Tailwind</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-blue-200" data-aos="zoom-in" data-aos-delay="200">
+        <p class="text-blue-600 font-semibold text-lg">JavaScript</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-blue-200" data-aos="zoom-in" data-aos-delay="300">
+        <p class="text-blue-600 font-semibold text-lg">Astro</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📬 Sección Contacto -->
+  <section id="contacto" data-aos="fade-up" class="py-24 bg-blue-600 text-white text-center">
+    <h2 class="text-4xl font-bold mb-6">💬 ¡Gracias por visitar mi portafolio!</h2>
+    <p class="text-lg max-w-2xl mx-auto">
+      Siempre estoy buscando aprender, colaborar en proyectos interesantes y aportar soluciones creativas.
+      <br />¿Trabajamos juntos en algo genial?
+    </p>
+  </section>
+</Layout>
+
+<!-- 🚀 Activar AOS -->
+<script>
+  import AOS from "aos";
+  AOS.init({
+    duration: 1000,
+    once: true,
+    easing: "ease-in-out",
+  });
+</script>

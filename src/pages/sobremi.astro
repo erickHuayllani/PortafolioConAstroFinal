@@ -1,0 +1,37 @@
+---
+import "../styles/sobremi.css";
+import erickImg from "../assets/erick.png";
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
+  <!-- Aquí va el contenido específico de la página -->
+</BaseLayout>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sobre mí</title>
+  </head>
+  <body>
+    <main class="sobre-mi-container">
+      <section class="profile-section">
+        <div class="profile-image">
+          <img src={erickImg.src} alt="Foto de Erick" />
+        </div>
+
+        <div class="profile-content">
+          <h1 class="name">👨‍💻 Erick Huayllani</h1>
+          <p class="description">
+            Soy un desarrollador web amateur con pasión por crear experiencias digitales modernas, accesibles y funcionales.
+            Me especializo en tecnologías como <strong>HTML, CSS, JavaScript y Python</strong>. Me encanta aprender nuevas herramientas para mejorar la calidad y eficiencia de mis proyectos.
+          </p>
+
+          <p class="extra">
+            En mi tiempo libre, exploro tendencias de diseño, desarrollo de videojuegos y ciberseguridad.
+            Siempre estoy abierto a nuevos desafíos y oportunidades para crecer profesionalmente 🚀.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
