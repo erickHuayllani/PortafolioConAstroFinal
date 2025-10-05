@@ -42,4 +42,4 @@ npm run dev
   │   ├── settings.json              # Configuración adicional
   ├── package.json                   # Dependencias del proyecto
   ├── package-lock.json              # Bloqueo de versiones de dependencias
-  └── README.md                      # Documento de documentación del proyecto
+  └── README.md                      # Documento de documentación del proyecto.
