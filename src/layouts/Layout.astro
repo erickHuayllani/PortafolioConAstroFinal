@@ -1,0 +1,37 @@
+
+---
+const { 
+  title = "Portafolio - Erick Huayllani", 
+  description = "Desarrollador web con pasión por crear experiencias únicas" 
+} = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- 🌀 AOS Animaciones -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  </head>
+
+  <body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
+    <slot />
+
+    <!-- ⚡ Script de AOS -->
+    <script type="module" is:inline>
+      import AOS from "https://unpkg.com/aos@2.3.4/dist/aos.js";
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: "ease-in-out",
+      });
+    </script>
+  </body>
+</html>
+---
+// Importación del CSS (ajusta la ruta si es necesario)
+import "../styles/index.css";
+---

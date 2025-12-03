@@ -1,0 +1,200 @@
+/* Fade-in general */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Fondo con estrellas */
+.stars {
+  position: fixed;
+  width: 100%; height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.45;
+  animation: starsMove 80s linear infinite;
+  z-index: -3;
+}
+
+@keyframes starsMove {
+  from { background-position: 0 0; }
+  to { background-position: -2000px 2000px; }
+}
+
+/* Aurora */
+.aurora {
+  position: fixed;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 30% 70%, rgba(168, 92, 255, 0.4), transparent 60%),
+              radial-gradient(circle at 80% 20%, rgba(255, 101, 189, 0.35), transparent 60%),
+              radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.25), transparent 70%);
+  filter: blur(90px);
+  animation: auroraMove 12s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+@keyframes auroraMove {
+  0% { transform: translateY(-20px); }
+  100% { transform: translateY(20px); }
+}
+
+/* Avatar */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.avatar-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 20px rgba(161, 93, 255, 0.5);
+}
+
+/* Encabezado */
+.contact-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-title {
+  font-size: 3rem;
+  color: rgb(144, 48, 168);
+  text-shadow: 0 0 18px rgba(204, 132, 255, 0.7);
+}
+
+.contact-subtitle,
+.contact-motivation {
+  font-size: 1.1rem;
+  color: #353a39;
+  font-weight: bold;
+}
+
+/* Caja motivacional */
+.contact-motivation {
+  max-width: 700px;
+  margin: 1rem auto;
+  background: rgba(255, 255, 255, 0.10);
+  padding: 1.1rem 1.3rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Formulario */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 25px rgba(170, 100, 255, 0.35);
+}
+
+label {
+  color: #c300ff;
+  margin-bottom: 0.4rem;
+  display: block;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #d6a8ff;
+  box-shadow: 0 0 10px rgba(174, 122, 255, 0.7);
+}
+
+/* Botón */
+.submit-btn {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #b478ff, #ff74da);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(185, 111, 255, 0.7);
+}
+
+/* Footer */
+.contact-footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: white;
+  font-weight: bold;
+}
+
+.social-icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.3rem;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 14px rgba(255,255,255,0.8);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .contact-title { font-size: 2.5rem; }
+  .avatar-img { width: 120px; height: 120px; }
+  .contact-form { padding: 1.4rem; }
+}
+/* --- FONDO AURORAS SUAVES --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* detrás de todo */
+  background: radial-gradient(circle at 30% 30%, #8a2be2, #4b0082, #000);
+  animation: aurora 10s ease-in-out infinite alternate;
+  filter: blur(100px);
+  opacity: 0.8;
+}
+
+@keyframes aurora {
+  0% {
+    background: radial-gradient(circle at 30% 30%, #8a2be2, #4b0082, #000);
+  }
+  50% {
+    background: radial-gradient(circle at 50% 50%, #ff6ec7, #4b0082, #000);
+  }
+  100% {
+    background: radial-gradient(circle at 70% 70%, #00ffff, #4b0082, #000);
+  }
+}

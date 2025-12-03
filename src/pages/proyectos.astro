@@ -1,0 +1,77 @@
+---
+import "../styles/proyectos.css";
+
+import alvimaxImg from "../assets/alvimax.png";
+import drazzyFoppImg from "../assets/drazzy fopp.png";
+import imposibleDashImg from "../assets/imposible dash.png";
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
+  <main class="proyectos-container">
+
+    <!-- Fondo animado con estrellitas -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <section class="header-section">
+      <h1 class="title">✨ Mis Proyectos</h1>
+      <p class="subtitle">Inspiración convertida en creación.</p>
+    </section>
+
+    <section class="cards-grid">
+      
+      <div class="project-card glow">
+        <img src={alvimaxImg.src} alt="Proyecto Alvimax" class="project-image" />
+        <h2>🌐 Alvimax</h2>
+        <p>Landing page moderna y responsiva creada con Astro y Tailwind.</p>
+        <button class="view-btn" data-img={alvimaxImg.src} data-title="Proyecto Alvimax">Ver Proyecto</button>
+      </div>
+
+      <div class="project-card glow">
+        <img src={drazzyFoppImg.src} alt="Proyecto Drazzy Fopp" class="project-image" />
+        <h2>📱 Drazzy Fopp</h2>
+        <p>Aplicación móvil con diseño minimalista.</p>
+        <button class="view-btn" data-img={drazzyFoppImg.src} data-title="Proyecto Drazzy Fopp">Ver Proyecto</button>
+      </div>
+
+      <div class="project-card glow">
+        <img src={imposibleDashImg.src} alt="Proyecto Imposible Dash" class="project-image" />
+        <h2>🎮 Imposible Dash</h2>
+        <p>Juego arcade desarrollado con Phaser.</p>
+        <button class="view-btn" data-img={imposibleDashImg.src} data-title="Proyecto Imposible Dash">Ver Proyecto</button>
+      </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden">
+      <button id="closeModal" aria-label="Cerrar modal" class="modal-close">&times;</button>
+      <img id="modalImg" src="" alt="" class="modal-image" />
+      <h3 id="modal-title" class="modal-title"></h3>
+    </div>
+
+  </main>
+
+  <script is:inline>
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modal-title');
+    const closeModalBtn = document.getElementById('closeModal');
+    const buttons = document.querySelectorAll('.view-btn');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modalImg.src = btn.dataset.img;
+        modalTitle.textContent = btn.dataset.title;
+        modal.classList.remove('hidden');
+      });
+    });
+
+    closeModalBtn.onclick = () => modal.classList.add('hidden');
+
+    window.onkeydown = (e) => {
+      if (e.key === "Escape") modal.classList.add("hidden");
+    };
+  </script>
+</BaseLayout>

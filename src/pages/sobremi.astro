@@ -1,0 +1,55 @@
+---
+import "../styles/sobremi.css";
+import erickImg from "../assets/erick.png";
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
+
+<main class="holo-container fade-in">
+
+  <!-- Tarjeta holográfica -->
+  <section class="holo-card" id="holo-card">
+    <div class="holo-img">
+      <img src={erickImg.src} alt="Erick" />
+    </div>
+
+    <div class="holo-content">
+      <h1 class="glitch-name" data-text="ERICK HUAYLLANI">ERICK HUAYLLANI</h1>
+
+      <p class="holo-desc">
+        Desarrollador web en crecimiento con enfoque futurista.  
+        Apasionado por tecnología, diseño digital y experiencias que emocionan.
+      </p>
+
+      <p class="holo-desc">
+        Me esfuerzo cada día por aprender, mejorar y avanzar hacia una versión
+        más fuerte, más capaz y brillante de mí mismo.  
+        Aspiro a ser un profesional que impacte positivamente el futuro de mi país. 💜
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat"><span>HTML</span><strong>85%</strong></div>
+        <div class="stat"><span>CSS</span><strong>80%</strong></div>
+        <div class="stat"><span>JavaScript</span><strong>75%</strong></div>
+        <div class="stat"><span>Python</span><strong>70%</strong></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script is:inline>
+  // HOLOGRAMA CARD 3D PARALLAX
+  const card = document.getElementById("holo-card");
+  card.addEventListener("mousemove",(e)=>{
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotateX = ((y - rect.height/2)/25)*-1;
+    const rotateY = (x - rect.width/2)/25;
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+  });
+  card.addEventListener("mouseleave",()=>{card.style.transform="rotateX(0) rotateY(0) scale(1)";});
+</script>
+
+</BaseLayout>
